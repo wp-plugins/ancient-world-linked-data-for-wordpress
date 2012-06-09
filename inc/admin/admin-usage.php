@@ -15,26 +15,20 @@ function wp_awld_js_settings_usage_page()
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'jquery-ui-accordion' );
 ?>
-<p><?php _e( 'The <em>Ancient World Linked Data for WordPress</em> plugin allows you to create enhanced links to the stable URIs relevant to the study of the Ancient World, using the awld.js library.', 'wp_awld_js' ); ?></p>
+<p><?php _e( 'The <em>Ancient World Linked Data for WordPress</em> plugin allows you to create enhanced links to the stable URIs relevant to the study of the Ancient World, using the awld.js library. For every external link to an Ancient World resource, a small popup will be shown on hover, with a preview of the resource description.', 'wp_awld_js' ); ?></p>
 <div id="accordion" style="margin-top:15px;">
-	<h3 class="acc" aria-expanded="true"><a href="#"><?php _e( 'Links', 'wp_awld_js' ); ?></a></h3>
+	<h3 class="acc" aria-expanded="true"><a href="#"><?php _e( 'Shortcode', 'wp_awld_js' ); ?></a></h3>
 	<div>
-		<p><?php _e( 'Awld.js detects and enhances relevant links automatically:', 'wp_awld_js' ); ?></p>
-		<p style="margin-left: 20px;"><code>&lt;a href="http://nomisma.org/id/athens"&gt;Athens&lt;/a&gt;</code></p>
-		<p><?php echo sprintf(	__( 'Visit the <a href="%s">next tab</a> for a list of available external resources.', 'wp_awld_js' ), esc_url( admin_url() . 'options-general.php?page=wp-awld-js-settings&tab=examples' ) ); ?></p>
-	</div>
-	<h3 class="acc"><a href="#"><?php _e( 'Shortcode', 'wp_awld_js' ); ?></a></h3>
-	<div>
-		<p><?php _e( 'The shortcode mimics the markup of a regular HTML link, except for the tag <code>awld</code> and the square brackets:', 'wp_awld_js' ); ?></p>
-		<p style="margin-left: 20px;"><code>[awld href="http://www.example.com/"]This is a link[/awld]</code></p>
-		<p><?php echo sprintf(	__( 'Visit the next tab for more <a href="%s">examples</a>.', 'wp_awld_js' ), esc_url( admin_url() . 'options-general.php?page=wp-awld-js-settings&tab=examples' ) ); ?></p>
+		<p><?php _e( 'Enhanced links are created with the <code>awld</code> shortcode. The shortcode mimics the markup of a regular HTML link, e.g.:', 'wp_awld_js' ); ?></p>
+		<p style="margin-left: 20px;"><code>[awld href="http://nomisma.org/id/athens"]Athens[/awld]</code></p>
+		<p><?php echo sprintf(	__( 'Visit the <a href="%s">next tab</a> for a list of available resources and more examples.', 'wp_awld_js' ), esc_url( admin_url() . 'options-general.php?page=wp-awld-js-settings&tab=examples' ) ); ?></p>
 	</div>
 	<h3 class="acc"><a href="#"><?php _e( 'Shortcode Parameters', 'wp_awld_js' ); ?></a></h3>
 	<div>
 		<p><?php _e( 'Following shortcode parameters can be configured:', 'wp_awld_js' ); ?></p>
 		<ul style="margin-left: 20px;">
 			<li><code>$href</code> (<em><?php _e( 'required', 'wp_awld_js' ); ?></em>): <?php _e( 'The href attribute (URL), i.e. the actual hyperlink to the external resource.', 'wp_awld_js' ); ?></li>
-			<li><code>$type</code> (<em><?php _e( 'optional', 'wp_awld_js' ); ?></em>): <?php _e( 'The type, valid values include: <code>default</code>, <code>person</code>, <code>object</code>. Defaults to <code>default</code>.', 'wp_awld_js' ); ?></li>
+			<li><code>$type</code> (<em><?php _e( 'optional', 'wp_awld_js' ); ?></em>): <?php _e( 'The type, valid values include: <code>person</code>, <code>place</code>, <code>event</code>, <code>citation</code>, <code>text</code> and <code>object</code>. Defaults to <code>default</code>.', 'wp_awld_js' ); ?></li>
 			<li>--------------------------------------------------------------</li>
 			<li><code>$title</code> (<em><?php _e( 'optional', 'wp_awld_js' ); ?></em>): <?php _e( 'The title attribute of the hyperlink. Empty by default.', 'wp_awld_js' ); ?></li>
 			<li><code>$class</code> (<em><?php _e( 'optional', 'wp_awld_js' ); ?></em>): <?php _e( 'The CSS classes applied to the hyperlink. Defaults to <code>wp-awld-js</code>', 'wp_awld_js' ); ?></li>
